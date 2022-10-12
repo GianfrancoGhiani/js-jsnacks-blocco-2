@@ -92,7 +92,7 @@ const showList = document.getElementById('list');
 button3.addEventListener('click', function createAndAdd(){
     
     const printArray = document.createElement('p');
-    printArray.innerText = '';
+    showList.innerHTML = '';
 
     let howManyV = parseInt(howMany.value);
     let valMaxV = parseInt(valMax.value);
