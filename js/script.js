@@ -81,3 +81,46 @@ button2.addEventListener('click', function createInvitations(){
 })
 
 // snack3
+const arrayInt = []
+let howMany = document.getElementById('howMany');
+let valMax = document.getElementById('valMax');
+const button3 = snack3.querySelector('button');
+const showList = document.getElementById('list');
+
+
+
+button3.addEventListener('click', function createAndAdd(){
+    
+    const printArray = document.createElement('p');
+    printArray.innerText = '';
+
+    let howManyV = parseInt(howMany.value);
+    let valMaxV = parseInt(valMax.value);
+    console.log(arrayInt, howManyV);
+
+   //per ogni i < di howMany crea un numero random e aggiungilo all'arrayInt
+    for (let i = 0; i < howManyV; i++){ 
+        let n = Math.floor(Math.random() * (valMaxV - 0 + 1) ) + 0;
+        arrayInt.push(n);
+        console.log(arrayInt);
+    }
+    //stampo a schermo la lista
+    printArray.innerHTML = `${arrayInt} <br>`;
+    showList.append(printArray);
+    
+    let addition = 0;
+    for (let i = 1; i < howManyV; i+= 2){ 
+        addition += arrayInt[i];
+    }
+    printArray.append(`  La somma dei numeri di indice dispari è: ${addition}`)
+
+
+    let arraylength = arrayInt.length;
+    //svuto arrayInt 
+    for (let i = arraylength ; i > 0 ; i--){ 
+        arrayInt.splice((i-1), 1);
+    } 
+    //svuoto i campi
+    howMany.value='';
+    valMax.value='';
+})

@@ -19,3 +19,12 @@ section{
     margin: 0 auto;
     width: 80%;
 }
+#snack3 button{
+    font-weight: 600;
+    color: #5F90FA;
+    border-color: #5F90FA;
+
+}
+#howMany, #valMax{
+ background-color: #FAD684;
+}
