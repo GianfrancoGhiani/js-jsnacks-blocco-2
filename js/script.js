@@ -33,13 +33,18 @@ showNum.classList.add('ms-4');
 snack1.append(showNum);
 
 button.addEventListener('click', function printingEven(){
-    let num = parseInt(number.value);
     showNum.innerText = '';
-    if (!(!(num % 2))){
-        num++;
+    if(!(number.value == '')){
+        let num = parseInt(number.value);
+        showNum.innerText = '';
+        if (!(!(num % 2))){
+            num++;
+        }
+        showNum.innerText = num;
+        
     }
-    showNum.innerText = num;
     number.value = '';
+    
 } )
 
 //  snack2
@@ -59,8 +64,7 @@ button2.addEventListener('click', function createInvitations(){
         let s = Math.floor(Math.random() * (14 - 0 + 1) ) + 0;
         invitations.push(`${nameList[n]} ${surnList[s]}`);
         listLine = document.createElement('p');
-        listLine.classList.add('w-25');
-        listLine.classList.add('border-bottom-1');
+        listLine.classList.add('col-4');
         snack2.querySelector('div').append(listLine);
         listLine.innerText = `${invitations[i]}`;
     }

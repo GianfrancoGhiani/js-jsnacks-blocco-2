@@ -15,3 +15,7 @@ section{
 #snack4{
     background-color: #5F90FA;
 }
+#snack2 div {
+    margin: 0 auto;
+    width: 80%;
+}
