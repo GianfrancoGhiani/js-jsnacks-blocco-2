@@ -1,3 +1,17 @@
 section{
+    width: 100%;
+    margin: auto;
     height: 100vh;
+}
+#snack1{
+    background-color: #FAD684;
+}
+#snack2{
+    background-color: #FA6BA9;
+}
+#snack3{
+    background-color: #86FC8A;
+}
+#snack4{
+    background-color: #5F90FA;
 }
