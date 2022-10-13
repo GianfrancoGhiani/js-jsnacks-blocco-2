@@ -96,13 +96,11 @@ button3.addEventListener('click', function createAndAdd(){
 
     let howManyV = parseInt(howMany.value);
     let valMaxV = parseInt(valMax.value);
-    console.log(arrayInt, howManyV);
 
    //per ogni i < di howMany crea un numero random e aggiungilo all'arrayInt
     for (let i = 0; i < howManyV; i++){ 
         let n = Math.floor(Math.random() * (valMaxV - 0 + 1) ) + 0;
         arrayInt.push(n);
-        console.log(arrayInt);
     }
     //stampo a schermo la lista
     printArray.innerHTML = `${arrayInt} <br>`;
@@ -123,4 +121,66 @@ button3.addEventListener('click', function createAndAdd(){
     //svuoto i campi
     howMany.value='';
     valMax.value='';
+})
+
+// snack4
+const button4 = snack4.querySelector('button');
+let howMany2 = document.getElementById('howMany2');
+let howMany3 = document.getElementById('howMany3');
+const lists = document.getElementById('lists');
+// const list1 = [];
+// const list2 = [];
+
+
+button4.addEventListener('click', function listchecker (){
+    const list1 = [];
+    const list2 = [];
+    let lengthList1 = parseInt(howMany2.value);
+    let lengthList2 = parseInt(howMany3.value);
+
+    let printLists = document.createElement('p');
+    lists.innerHTML = 'Queste sono le due liste create automaticìamente: ';
+
+
+
+    for (let i = 0; i < lengthList1; i++){ 
+        let n = Math.floor(Math.random() * (100 - 0 + 1) ) + 0;
+        list1.push(n);
+    }
+    printLists.innerHTML += `${list1} <br>`;
+    for (let i = 0; i < lengthList2; i++){ 
+        let n = Math.floor(Math.random() * (100 - 0 + 1) ) + 0;
+        list2.push(n);
+    }
+    printLists.innerHTML += `${list2} <br>`;
+    lists.append(printLists);
+
+
+    howMany2.value='';
+    howMany3.value='';
+    if (lengthList1 < lengthList2){
+        let dif = lengthList2 - lengthList1;
+        for (let i = 0; i < dif; i++){ 
+            let n = Math.floor(Math.random() * (100 - 0 + 1) ) + 0;
+            list1.push(n);
+        }
+        printLists.innerHTML += `Ora avranno la stessa lunghezza: <br>`
+
+    } else if (lengthList1 > lengthList2){
+        let dif = lengthList1 - lengthList2;
+        for (let i = 0; i < dif; i++){ 
+            let n = Math.floor(Math.random() * (100 - 0 + 1) ) + 0;
+            list2.push(n);
+        }
+        printLists.innerHTML += `Ora avranno la stessa lunghezza: <br>`
+    } else {
+        printLists.innerHTML += `Le due liste hanno uguale lunghezza <br>`;
+    }
+
+
+
+    printLists.innerHTML += `${list1} <br>`;
+    printLists.innerHTML += `${list2} <br>`;
+    lists.append(printLists);
+
 })
