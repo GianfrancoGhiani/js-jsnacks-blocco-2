@@ -128,21 +128,18 @@ const button4 = snack4.querySelector('button');
 let howMany2 = document.getElementById('howMany2');
 let howMany3 = document.getElementById('howMany3');
 const lists = document.getElementById('lists');
-// const list1 = [];
-// const list2 = [];
-
 
 button4.addEventListener('click', function listchecker (){
+    lists.classList.add('p-3')
     const list1 = [];
     const list2 = [];
+    // prendiamo lunghezza liste scelte dall'utente
     let lengthList1 = parseInt(howMany2.value);
     let lengthList2 = parseInt(howMany3.value);
-
     let printLists = document.createElement('p');
     lists.innerHTML = 'Queste sono le due liste create automaticìamente: ';
 
-
-
+    //creazione lista 1 e 2 in base a scelta utente
     for (let i = 0; i < lengthList1; i++){ 
         let n = Math.floor(Math.random() * (100 - 0 + 1) ) + 0;
         list1.push(n);
@@ -154,10 +151,10 @@ button4.addEventListener('click', function listchecker (){
     }
     printLists.innerHTML += `${list2} <br>`;
     lists.append(printLists);
-
-
     howMany2.value='';
     howMany3.value='';
+
+    //cerco se c'è differernza tra le liste e se c'è aggiungo numeri random alla lista più piccola
     if (lengthList1 < lengthList2){
         let dif = lengthList2 - lengthList1;
         for (let i = 0; i < dif; i++){ 
@@ -165,7 +162,6 @@ button4.addEventListener('click', function listchecker (){
             list1.push(n);
         }
         printLists.innerHTML += `Ora avranno la stessa lunghezza: <br>`
-
     } else if (lengthList1 > lengthList2){
         let dif = lengthList1 - lengthList2;
         for (let i = 0; i < dif; i++){ 
@@ -176,9 +172,6 @@ button4.addEventListener('click', function listchecker (){
     } else {
         printLists.innerHTML += `Le due liste hanno uguale lunghezza <br>`;
     }
-
-
-
     printLists.innerHTML += `${list1} <br>`;
     printLists.innerHTML += `${list2} <br>`;
     lists.append(printLists);

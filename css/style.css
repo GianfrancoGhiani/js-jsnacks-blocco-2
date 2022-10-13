@@ -2,6 +2,14 @@ section{
     width: 100%;
     margin: auto;
     height: 100vh;
+    padding-top: 4rem;
+}
+nav{
+    background-color: rgba(255, 255, 255, 0.4);
+    font-weight: 700;
+}
+nav .nav-link{
+    color: grey;
 }
 #snack1{
     background-color: #FAD684;
@@ -27,4 +35,9 @@ section{
 }
 #howMany, #valMax{
  background-color: #FAD684;
+}
+#lists {
+    background-color: rgba(255, 255, 255, 0.4);
+
+    border-radius: .5rem;
 }
