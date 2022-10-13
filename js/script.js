@@ -65,11 +65,10 @@ button2.addEventListener('click', function createInvitations(){
     // pulisco la lista "zona" della pagina di visualizzazione lista in caso sia già piena da cicli precedenti
     div2.innerHTML= ''; 
     // pulisco la lista invitati in caso sia già piena da cicli precedenti (liste sempre diverse)
-    for (let i = 0; i < nameList.length; i++){ 
-        invitations.splice(0, 1);
-    }
+    invitations.length = 0;
     // unisco randomicamente le 2 liste in una terza lista "invitati" e stampo su pagina
-    for (let i = 0; i < nameList.length; i++){ 
+    let i = 0;
+    while (i < nameList.length){ 
         let n = Math.floor(Math.random() * (14 - 0 + 1) ) + 0;
         let s = Math.floor(Math.random() * (14 - 0 + 1) ) + 0;
         invitations.push(`${nameList[n]} ${surnList[s]}`);
@@ -77,6 +76,7 @@ button2.addEventListener('click', function createInvitations(){
         listLine.classList.add('col-4');
         snack2.querySelector('div').append(listLine);
         listLine.innerText = `${invitations[i]}`;
+        i++;
     }
 })
 
@@ -115,9 +115,7 @@ button3.addEventListener('click', function createAndAdd(){
 
     let arraylength = arrayInt.length;
     //svuto arrayInt 
-    for (let i = arraylength ; i > 0 ; i--){ 
-        arrayInt.splice((i-1), 1);
-    } 
+    arrayInt.length = 0;
     //svuoto i campi
     howMany.value='';
     valMax.value='';
